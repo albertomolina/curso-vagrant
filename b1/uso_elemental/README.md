@@ -10,7 +10,7 @@ Una vez instalado vagrant, y como es recomendable siempre ante una
 nueva aplicación, miramos la ayuda disponible para ver la sintaxis
 elemental:
 ```
-vagrat -h
+vagrant -h
 
 Usage: vagrant [options] <command> [<args>]
 
@@ -57,9 +57,9 @@ subcomando poniendo "-h" al final de la instrucción.
 ## Ejercicios
 
 1. Añadir una primera imagen (Ubuntu Trusty de 64 bits).
-```
-vagrant box add ubuntu/trusty64
-```
+    ```
+	vagrant box add ubuntu/trusty64
+	```
 1. Añadir algunas imágenes más de sistemas operativos básicos (Debian
    Jessie y CentOS 7).
    
