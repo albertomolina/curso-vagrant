@@ -5,7 +5,7 @@
 ### BLOQUE I: Introducción
 1. [Introducción a Vagrant](b1/intro)
 1. [Instalación](b1/instalacion)
-1. [Uso elemental](b1/uso_emental)
+1. [Uso elemental](b1/uso_elemental)
 1. [Directorio sincronizado](b1/dir_sincro)
 
 ### BLOQUE II: Uso de Vagrant
