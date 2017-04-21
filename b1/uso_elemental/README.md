@@ -101,25 +101,36 @@ subcomando poniendo "-h" al final de la instrucción.
    ```
    vagrant destroy
    ```
-1. Uso de una máquina ya configurada, por ejemplo rasmus/php7dev que contiene los paquetes necesarios para ejecutar una aplicación web con PHP7.
-Instalamos la imagen:
+1. Uso de una máquina ya configurada, por ejemplo rasmus/php7dev que
+contiene los paquetes necesarios para ejecutar una aplicación web con
+PHP7.
+
+	Instalamos la imagen:
+
    ```
    vagrant box add rasmus/php7dev
    ```
-Clonamos el repositorio que contiene el Vagrantfile configurado con las características de esta imagen:
+   Clonamos el repositorio que contiene el Vagrantfile configurado con
+   las características de esta imagen:
+   
    ```
    git clone https://github.com/rlerdorf/php7dev.git
    ```
-Accedemos al directorio "php7dev", arrancamos la máquina y accedemos a ella:
+   Accedemos al directorio "php7dev", arrancamos la máquina y
+   accedemos a ella:
+   
    ```
    cd php7dev
    vagrant up
    vagrant ssh
    ```
-Si queremos acceder a la web con php7 basta con poner en el navegador:
+   Si queremos acceder a la web con php7 basta con poner en el
+   navegador:
+   
    ```
    http://192.168.7.7
    ```
-Ya que la configuración de Vagrant crea una red específica para esa máquina y la configura con esa IP estática.
+   Ya que la configuración de Vagrant crea una red específica para esa
+   máquina y la configura con esa IP estática. 
 
    
