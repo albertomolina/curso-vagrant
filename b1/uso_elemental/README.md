@@ -68,53 +68,53 @@ subcomando poniendo "-h" al final de la instrucción.
    
 Creamos un directorio para cada proyecto, accedemos al proyecto y
 creamos un fichero de configuración básico de vagrant con:
-```
-vagrant init -m ubuntu/trusty64
-```
+   ```
+   vagrant init -m ubuntu/trusty64
+   ```
 Levantamos la máquina con, que copiará la imagen como una nueva
 máquina y la arrancará:
-```
-vagrant up
-```
+   ```
+   vagrant up
+   ```
 Accedemos a la máquina con:
-```
-vagrant ssh
-```
+   ```
+   vagrant ssh
+   ```
 Comprobamos en todo momento el estado de la máquina con:
-```
-vagrant status
-```
+   ```
+   vagrant status
+   ```
 Podemos parar la máquina con:
-```
-vagrant halt
-```
+   ```
+   vagrant halt
+   ```
 Si de nuevo levantamos la máquina, se reutilizará la máquina
 anteriormente creada y los cambios que se hubieran efectuado en
 ella. Cuando no queramos volver a utilizar esa máquina la eliminamos
 permanentemente con:
-```
-vagrant destroy
-```
+   ```
+   vagrant destroy
+   ```
 1. Uso de una máquina ya configurada, por ejemplo rasmus/php7dev que contiene los paquetes necesarios para ejecutar una aplicación web con PHP7.
 
 Instalamos la imagen:
-```
-vagrant box add rasmus/php7dev
-```
+   ```
+   vagrant box add rasmus/php7dev
+   ```
 Clonamos el repositorio que contiene el Vagrantfile configurado con las características de esta imagen:
-```
-git clone https://github.com/rlerdorf/php7dev.git
-```
+   ```
+   git clone https://github.com/rlerdorf/php7dev.git
+   ```
 Accedemos al directorio "php7dev", arrancamos la máquina y accedemos a ella:
-```
-cd php7dev
-vagrant up
-vagrant ssh
-```
+   ```
+   cd php7dev
+   vagrant up
+   vagrant ssh
+   ```
 Si queremos acceder a la web con php7 basta con poner en el navegador:
-```
-http://192.168.7.7
-```
+   ```
+   http://192.168.7.7
+   ```
 Ya que la configuración de Vagrant crea una red específica para esa máquina y la configura con esa IP estática.
 
    
