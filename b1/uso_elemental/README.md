@@ -64,8 +64,7 @@ subcomando poniendo "-h" al final de la instrucción.
    Jessie y CentOS 7).
    
 1. Uso básico de vagrant: vagrant init, vagrant up, vagrant status,
-   vagrant halt y  vagrant destroy
-   
+   vagrant halt y  vagrant destroy.
 Creamos un directorio para cada proyecto, accedemos al proyecto y
 creamos un fichero de configuración básico de vagrant con:
    ```
@@ -96,7 +95,6 @@ permanentemente con:
    vagrant destroy
    ```
 1. Uso de una máquina ya configurada, por ejemplo rasmus/php7dev que contiene los paquetes necesarios para ejecutar una aplicación web con PHP7.
-
 Instalamos la imagen:
    ```
    vagrant box add rasmus/php7dev
