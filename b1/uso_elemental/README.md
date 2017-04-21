@@ -66,37 +66,37 @@ subcomando poniendo "-h" al final de la instrucción.
 1. Uso básico de vagrant: vagrant init, vagrant up, vagrant status,
    vagrant halt y  vagrant destroy.
 
-Creamos un directorio para cada proyecto, accedemos al proyecto y
-creamos un fichero de configuración básico de vagrant con:
+	Creamos un directorio para cada proyecto, accedemos al proyecto y
+	creamos un fichero de configuración básico de vagrant con:
 
    ```
    vagrant init -m ubuntu/trusty64
    ```
-Levantamos la máquina con, que copiará la imagen como una nueva
-máquina y la arrancará:
+   Levantamos la máquina con, que copiará la imagen como una nueva
+   máquina y la arrancará:
 
    ```
    vagrant up
    ```
-Accedemos a la máquina con:
+   Accedemos a la máquina con:
 
    ```
    vagrant ssh
    ```
-Comprobamos en todo momento el estado de la máquina con:
+   Comprobamos en todo momento el estado de la máquina con:
 
    ```
    vagrant status
    ```
-Podemos parar la máquina con:
+   Podemos parar la máquina con:
 
    ```
    vagrant halt
    ```
-Si de nuevo levantamos la máquina, se reutilizará la máquina
-anteriormente creada y los cambios que se hubieran efectuado en
-ella. Cuando no queramos volver a utilizar esa máquina la eliminamos
-permanentemente con:
+   Si de nuevo levantamos la máquina, se reutilizará la máquina
+   anteriormente creada y los cambios que se hubieran efectuado en
+   ella. Cuando no queramos volver a utilizar esa máquina la eliminamos
+   permanentemente con:
 
    ```
    vagrant destroy
