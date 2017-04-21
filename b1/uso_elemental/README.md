@@ -60,12 +60,10 @@ subcomando poniendo "-h" al final de la instrucción.
 ```
 vagrant box add ubuntu/trusty64
 ```
-2. Añadir algunas imágenes más de sistemas operativos básicos (Debian
+1. Añadir algunas imágenes más de sistemas operativos básicos (Debian
    Jessie y CentOS 7).
    
-3. Añadir una imagen de un sistema configurado
-
-4. Uso básico de vagrant: vagrant init, vagrant up, vagrant status,
+1. Uso básico de vagrant: vagrant init, vagrant up, vagrant status,
    vagrant halt y  vagrant destroy
    
 Creamos un directorio para cada proyecto, accedemos al proyecto y
@@ -97,6 +95,26 @@ permanentemente con:
 ```
 vagrant destroy
 ```
+1. Uso de una máquina ya configurada, por ejemplo rasmus/php7dev que contiene los paquetes necesarios para ejecutar una aplicación web con PHP7.
 
+Instalamos la imagen:
+```
+vagrant box add rasmus/php7dev
+```
+Clonamos el repositorio que contiene el Vagrantfile configurado con las características de esta imagen:
+```
+git clone https://github.com/rlerdorf/php7dev.git
+```
+Accedemos al directorio "php7dev", arrancamos la máquina y accedemos a ella:
+```
+cd php7dev
+vagrant up
+vagrant ssh
+```
+Si queremos acceder a la web con php7 basta con poner en el navegador:
+```
+http://192.168.7.7
+```
+Ya que la configuración de Vagrant crea una red específica para esa máquina y la configura con esa IP estática.
 
    
