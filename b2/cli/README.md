@@ -49,3 +49,74 @@ simple "help" y la lísta completa de comandos se obiene con:
    version         prints current and latest Vagrant version
    </pre>
 Donde hemos resaltado las opciones que hemos visto anteriormente.   
+
+Veamos algunas de estas opciones de nuevo con algunos ejemplos/ejercicios.
+
+## Ejercicios
+
+1. Suspende una máquina virtual que esté arrancada, comprueba el estado y reanúdala.
+
+   Para suspenderla a disco:
+   
+   ```
+   vagrant suspend
+   ```
+   Comprobamos su estado:
+   
+   ```
+   vagrant status
+   Current machine states:
+   
+   default                   saved (virtualbox)
+   
+   To resume this VM, simply run `vagrant up`.
+   ```
+   
+   Y se reanuda con "vagrant up" o con "vagrant resume", este último
+   no hace ningún tipo de comprobación sobre la máquina, el box,
+   etc. simplemente reanuda la máquina desde su estado de suspensión.
+   
+2. Comprueba la configuración ssh de una máquina vagrant.
+
+   ```
+   vagrant ssh-config
+   Host default
+     HostName 127.0.0.1
+	 User vagrant
+	 Port 2222
+	 UserKnownHostsFile /dev/null
+	 StrictHostKeyChecking no
+	 PasswordAuthentication no
+	 IdentityFile /home/alberto/Prueba1/.vagrant/machines/default/virtualbox/private_key
+     IdentitiesOnly yes
+	 LogLevel FATAL
+	 
+   ```
+1. Lanza una máquina vagrant, realiza alguna modificación, guarda una
+   instantánea, realiza una segunda modificación y restaura la máquina desde la
+   instantánea.
+   
+   Creamos una máquina, accedemos a ella e instalamos un paquete (por
+   ejemplo apache2", redirigimos el puerto 8080/tcp de la anfitriona
+   al 80/tco de la máquina virtual. Realizamos una instantánea
+   (*snapshot*) de la máquina:
+   
+   ```
+   vagrant snapshot save apache-limpio
+   ==> apache-limpio: Snapshotting the machine as 'apache-limpio'...
+   ==> apache-limpio: Snapshot saved! You can restore the snapshot at any time by
+   ==> apache-limpio: using `vagrant snapshot restore`. You can delete it using
+   ==> apache-limpio: `vagrant snapshot delete`.
+   ```
+   Podemos comprobar en el directorio de máquinas virtuales de
+   VirtualBox el contenido del directorio Snapshots.
+   
+   Realizamos una modificación del index.html y restauramos la máquina
+   al estado que tenía cuando se hizo la instantánea:
+   
+   ```
+   vagrant snapshot restore apache-limpio
+   ```
+   
+	   
+	   
