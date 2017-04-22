@@ -117,6 +117,10 @@ Veamos algunas de estas opciones de nuevo con algunos ejemplos/ejercicios.
    ```
    vagrant snapshot restore apache-limpio
    ```
-   
+
+1. Existe un método más sencillo de realizar instantáneas, es mediante
+   el comando "vagrant snapshot push" que va almacenando instantáneas
+   cada vez que se invoca y se recupera la más reciente con "vagrant
+   snapshot pop".
 	   
 	   
