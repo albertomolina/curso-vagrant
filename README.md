@@ -10,7 +10,7 @@
 
 ### BLOQUE II: Uso de Vagrant
 1. [Gestión de imágenes (boxes)](b2/imagenes)
-1. [Definición de escenarios: VagrantFile](b2/vagrantfile)
+1. [Definición de escenarios: Vagrantfile](b2/vagrantfile)
 1. [Uso de la línea de comandos](b2/cli)
 
 ### BLOQUE III: Conceptos avanzados
