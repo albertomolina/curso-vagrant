@@ -112,3 +112,60 @@ consideramos más interesante hacerlo mediante algunos ejercicios.
    vagrant reload
    ```
 												   
+	En algunas ocasiones Vagrant no ofrece directamente la posibilidad
+	de hacer cierta configuración específica en la máquina virtual,
+	por lo que pierde parte de su atractivo, sin embargo esto puede
+	solucionarse utilizando comandos "en bruto", en el caso de
+	utilizar VirtualBox, incluyendo en en fichero Vagrantfile comandos
+	de VBoxManage, como en el siguiente ejercicio.
+	
+1. Configura una máquina virtual que tenga un disco adicional de 500
+   GiB.
+   
+   Editamos el fichero Vagrantfile e incluímos las líneas:
+   
+   ```
+   ....
+   config.vm.provider "virtualbox" do |vb|
+	     file_to_disk = 'tmp/disk.vdi'
+		 unless File.exist?(file_to_disk)
+	       vb.customize ['createhd', '--filename', file_to_disk, '--size', 500 * 1024]
+       end
+	       vb.customize ['storageattach', :id, '--storagectl', 'SATAController', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+   end
+   ...
+   ```
+   En el directorio de trabajo podremos ver que se ha creado un
+   fichero en formato vdi::
+   
+   ```
+   ls -hl tmp/
+   total 2,0M
+   -rw------- 1 alberto alberto 3,0M abr 23 10:42 disk.vdi
+   ```
+   Y desde la máquina virtual veremos un disco adicional de 500GiB:
+   
+   ```
+   lsblk
+   NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+   sda      8:0    0    40G  0 disk 
+   └─sda1   8:1    0    40G  0 part /
+   sdb      8:16   0   500G  0 disk
+   ```
+
+   **NOTA:** Este tipo de configuraciones en las que se pone de forma
+     explícita las características de la máquina virtual no son ni
+     mucho menos generales, en el caso anterior se está poniendo de
+     forma concreta el puerto SATA al que conectar el disco y el
+     nombre del controlador SATA, características que pueden variar de
+     una máquina virtual a otra. Suele ser conveniente obtener
+     previamente información de las características de la máquina
+     virtual, que en el caso de VirtualBox se puede hacer con el
+     siguiente comando de VBoxManage:
+	 
+   ```
+   VBoxManage showvminfo NOMBREDELAMV
+   ```
+   
+   
+	 
