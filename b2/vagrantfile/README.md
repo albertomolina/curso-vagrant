@@ -127,11 +127,11 @@ consideramos más interesante hacerlo mediante algunos ejercicios.
    ```
    ....
    config.vm.provider "virtualbox" do |vb|
-	     file_to_disk = 'tmp/disk.vdi'
-		 unless File.exist?(file_to_disk)
-	       vb.customize ['createhd', '--filename', file_to_disk, '--size', 500 * 1024]
-       end
-	       vb.customize ['storageattach', :id, '--storagectl', 'SATAController', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+     file_to_disk = 'tmp/disk.vdi'
+     unless File.exist?(file_to_disk)
+       vb.customize ['createhd', '--filename', file_to_disk, '--size', 500 * 1024]
+     end
+     vb.customize ['storageattach', :id, '--storagectl', 'SATAController', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
    end
    ...
    ```
