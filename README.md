@@ -17,7 +17,6 @@
 1. [Redes](b3/redes)
 1. [Entornos multimáquinas](b3/multimaquinas)
 1. [Configuración integrada](b3/conf_int)
-1. [Proveedores](b3/proveedores)
 1. [Plugins](b3/plugins)
 
 
