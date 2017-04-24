@@ -19,7 +19,8 @@ curso. En el caso de vagrant la solución que se ha encontrado es muy
 razonable, ya que en lugar de desarrollar una nueva herramienta para
 competir con las cuatro soluciones más utilizadas hoy en día: ansible, 
 puppet, chef y salt, la gente de Hashicorp ha optado por una solución
-muy adecuada y razonable: integrar 
+muy adecuada y razonable: integrarlas todas con vagrant.
+
 ## Ejemplos
 
 1. Crea un entorno vagrant sencillo en el que tras arrancar una
@@ -36,12 +37,13 @@ muy adecuada y razonable: integrar
    DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
    ```
    Creamos el siguiente Vagrantfile:
-   
+
+   ```
    Vagrant.configure("2") do |config|
      config.vm.box = "ubuntu/trusty64"
      config.vm.provision "shell", path: "actualizar.sh"
    end
-	 
+   ```
 1. Crea un entorno idéntico al anterior, realizando las mismas tareas,
    pero ahora utilizando ansible, que debe estar instalado en la
    máquina anfitriona.
